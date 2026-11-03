@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sarthak Study Point | Rohit Kumar — Founder & Owner</title>
+<style>
+:root{--navy:#10264b;--blue:#2457d6;--bg:#f3f6fb;--ink:#18243b;--muted:#68758b;--line:#e2e8f1;--green:#14845b;--gold:#9a6810;--red:#b33d3d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}
+header{background:#fff;border-bottom:1px solid var(--line);padding:12px max(14px,calc((100% - 1240px)/2));display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:5}.brand{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--navy)}.logo{width:42px;height:42px;background:linear-gradient(140deg,#2b69e8,#10264b);border-radius:12px;display:grid;place-items:center;color:white;font-size:22px}.brand small{display:block;font-size:9px;color:var(--muted);letter-spacing:1.4px}nav{display:flex;gap:4px;flex-wrap:wrap}nav button,.tab{border:0;background:transparent;padding:9px 11px;border-radius:9px;color:#4d5a70;font-size:13px;font-weight:750}nav button.active,nav button:hover,.tab.active{background:#eaf1ff;color:var(--blue)}.btn{border:0;background:var(--blue);color:white;padding:10px 14px;border-radius:9px;font-weight:800}.btn.light{background:#edf2ff;color:var(--blue)}.btn.green{background:var(--green)}.btn.red{background:var(--red)}.btn.small{font-size:12px;padding:7px 10px}.wrap{max-width:1240px;margin:22px auto;padding:0 16px}.page{display:none}.page.active{display:block}.hero{background:linear-gradient(115deg,#10264b,#2457a9 70%,#3678e7);color:white;border-radius:19px;padding:32px;display:grid;grid-template-columns:1.4fr .6fr;gap:20px;align-items:center}.hero h1{font-size:clamp(29px,4vw,45px);line-height:1.1;margin:12px 0}.hero p{color:#dbe7ff;line-height:1.7}.heroArt{background:#ffffff13;border:1px solid #ffffff3d;border-radius:16px;padding:20px;text-align:center;font-size:45px}.eyebrow{font-size:11px;letter-spacing:1.7px;color:#bfd2ff;font-weight:900}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:15px 0}.stat,.panel,.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}.stat b{display:block;font-size:24px;color:var(--navy)}.stat span{font-size:11px;color:var(--muted)}.head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:23px 0 13px}.head h2{margin:0;color:var(--navy);font-size:21px}.head p{margin:5px 0 0;color:var(--muted);font-size:12px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.course{padding:0;overflow:hidden}.courseTop{background:linear-gradient(130deg,#eaf1ff,#f8faff);padding:17px;display:flex;justify-content:space-between;font-size:27px}.courseBody{padding:15px}.courseBody h3{margin:0 0 6px;font-size:16px}.courseBody p{font-size:12px;color:var(--muted);min-height:34px}.row{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.between{justify-content:space-between}.muted{font-size:12px;color:var(--muted)}.pill{display:inline-block;padding:5px 9px;border-radius:20px;background:#e7f5ee;color:#13764f;font-size:10px;font-weight:900}.pill.gold{background:#fff2d6;color:#90600d}.pill.blue{background:#eaf1ff;color:#2457d6}.field{margin:10px 0}.field label{display:block;font-size:12px;font-weight:800;color:#536078;margin-bottom:5px}.field input,.field select,.field textarea{width:100%;padding:10px;border:1px solid #d9e1ed;border-radius:9px;background:#fff;color:var(--ink)}.field textarea{min-height:72px}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.tabs{display:flex;gap:4px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:14px}.tab{padding:9px 12px}.subtab{display:none}.subtab.active{display:block}.notice{background:#fff7e7;border:1px solid #f1dfb7;color:#74551b;border-radius:10px;padding:12px;font-size:12px;line-height:1.6;margin:12px 0}.table{width:100%;border-collapse:collapse;font-size:12px}.table th,.table td{padding:10px 8px;border-bottom:1px solid var(--line);text-align:left}.table th{color:var(--muted);font-size:10px;text-transform:uppercase}.empty{text-align:center;color:var(--muted);padding:20px}.qbox{border:1px solid var(--line);border-radius:10px;padding:12px;margin:9px 0}.qbox b{display:block;margin-bottom:5px}.modal{display:none;position:fixed;inset:0;background:#09162dcc;z-index:60;align-items:center;justify-content:center;padding:15px}.modal.show{display:flex}.modalbox{background:white;border-radius:16px;padding:22px;width:min(500px,100%);max-height:90vh;overflow:auto}.toast{display:none;position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#10264b;color:white;padding:12px 16px;border-radius:10px;z-index:30;font-size:13px;max-width:92%;text-align:center}footer{background:var(--navy);color:#dce7ff;text-align:center;padding:25px;margin-top:40px;font-size:12px}
+@media(max-width:850px){header{align-items:flex-start;flex-direction:column}nav{width:100%;overflow:auto;flex-wrap:nowrap}nav button{white-space:nowrap}.hero{grid-template-columns:1fr}.heroArt{display:none}.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:580px){.wrap{padding:0 11px;margin:14px auto}.hero{padding:22px}.stats{grid-template-columns:repeat(2,1fr)}.grid,.two,.three{grid-template-columns:1fr}.head{align-items:flex-start;flex-direction:column}.table{font-size:10px}.table th,.table td{padding:7px 4px}}
+
+.exam-first{margin:18px 0 26px}
+.exam-first-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:13px}
+.exam-first-head h2{margin:0;color:var(--navy);font-size:clamp(21px,3vw,27px)}
+.exam-first-head p{margin:5px 0 0;color:var(--muted);font-size:13px}
+.exam-shortcuts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.exam-shortcut{border:1px solid var(--line);border-radius:17px;padding:19px;background:#fff;min-height:190px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 5px 18px #1c35540a;transition:.18s}
+.exam-shortcut:hover{transform:translateY(-3px);box-shadow:0 10px 24px #1c355418;border-color:#b8cafa}
+.exam-shortcut .shortcut-icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:25px;background:#eaf1ff}
+.exam-shortcut:nth-child(2) .shortcut-icon{background:#e7f6ef}
+.exam-shortcut:nth-child(3) .shortcut-icon{background:#fff2d8}
+.exam-shortcut h3{margin:12px 0 5px;color:var(--navy);font-size:18px}
+.exam-shortcut p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}
+.shortcut-link{font-size:13px;font-weight:850;color:var(--blue);margin-top:16px}
+.zone-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.zone-item{border:1px solid var(--line);border-radius:12px;padding:14px;background:#fff}
+.zone-item h4{margin:0 0 6px;color:var(--navy)}
+.zone-item p{font-size:12px;color:var(--muted);margin:0 0 10px}
+@media(max-width:650px){.exam-shortcuts{grid-template-columns:1fr;gap:10px}.exam-shortcut{min-height:145px;padding:15px;display:grid;grid-template-columns:52px 1fr;column-gap:12px;align-items:center}.exam-shortcut .shortcut-icon{grid-row:1 / span 2}.exam-shortcut h3{margin:0 0 4px}.exam-shortcut p{grid-column:2}.shortcut-link{grid-column:2;margin-top:8px}.exam-first-head{align-items:flex-start;flex-direction:column}.zone-list{grid-template-columns:1fr}}
+
+
+/* Fix: display only the selected exam section */
+.hide{display:none!important}
+
+.exam-tools{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.exam-filter{display:flex;gap:9px;flex-wrap:wrap;align-items:end;background:#f8faff;border:1px solid var(--line);padding:12px;border-radius:12px;margin:12px 0}
+.exam-filter .field{margin:0;min-width:150px;flex:1}
+.runner{position:fixed;inset:0;background:#f3f6fb;z-index:40;display:none;overflow:auto}
+.runner.show{display:block}
+.runner-head{background:#10264b;color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px;position:sticky;top:0;z-index:2}
+.runner-main{max-width:1050px;margin:16px auto;padding:0 14px;display:grid;grid-template-columns:1fr 250px;gap:14px}
+.runner-card,.palette{background:#fff;border:1px solid var(--line);border-radius:13px;padding:16px}
+.runner-q{font-size:17px;font-weight:800;line-height:1.6;margin:12px 0 18px}
+.runner-option{display:flex;gap:10px;align-items:flex-start;padding:12px;border:1px solid var(--line);border-radius:10px;margin:9px 0;cursor:pointer}
+.runner-option.selected{border-color:var(--blue);background:#eef3ff}
+.runner-option input{margin-top:4px}
+.palette-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:12px}
+.pal{border:0;border-radius:7px;padding:9px 2px;background:#e9edf4;color:#45536b;font-weight:800}
+.pal.answered{background:#16865d;color:white}.pal.review{background:#e6a52c;color:#fff}.pal.current{outline:3px solid #2457d6}
+.runner-actions{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:18px}
+.result-score{font-size:42px;font-weight:950;color:var(--blue)}
+.review-item{border-bottom:1px solid var(--line);padding:12px 0;font-size:13px;line-height:1.6}
+@media(max-width:700px){.runner-main{grid-template-columns:1fr}.palette{order:-1}.palette-grid{grid-template-columns:repeat(8,1fr)}.runner-q{font-size:15px}}
+
+
+.media-playback{margin-top:14px;padding:14px;border:1px solid #dce4ef;border-radius:14px;background:#f7f9fc;min-height:90px}
+.media-playback video,.media-playback iframe{width:100%;max-width:900px;aspect-ratio:16/9;border:0;border-radius:10px;background:#101828}
+.media-card{border:1px solid #e1e7f0;border-radius:13px;padding:14px;background:#fff}
+.media-card h4{margin:0 0 7px;color:var(--navy)}
+.media-card small{display:block;color:#667085;line-height:1.6;margin:5px 0 10px}
+
+
+.railway-hero-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:16px 0}
+.railway-exam-card{border:1px solid #d8e2ef;border-radius:16px;padding:20px;text-align:left;background:linear-gradient(135deg,#f7faff,#eef4ff);cursor:pointer;color:var(--navy)}
+.railway-exam-card h2{font-size:26px;margin:8px 0}.railway-exam-card p{margin:5px 0;color:#344054}.railway-exam-card small{color:#667085;line-height:1.5}
+.railway-item{border:1px solid #e1e7f0;border-radius:13px;padding:15px;background:#fff}.railway-item h3{margin:7px 0}.railway-item p{color:#667085;font-size:13px;line-height:1.5}
+@media(max-width:650px){.railway-hero-grid{grid-template-columns:1fr}}
+
+</style></head><body>
+<header><div class="brand"><div class="logo">S</div><div>SARTHAK STUDY POINT<small>LEARN • PRACTICE • SUCCEED</small></div></div><nav><button class="active" data-page="home">Home</button><button data-page="examzone">General Exam Preparation</button><button data-page="railwayzone">Railway GDCE / LDCE</button><button data-page="sarthakstore">PDF & Test Store</button><button data-page="admin">Admin Upload</button></nav><button class="btn small" onclick="login()">Login / Register</button></header>
+<main class="wrap">
+<section id="home" class="page active"><div style="background:#080f20;color:#fff;border-radius:22px;padding:28px 18px;text-align:center;margin-bottom:20px;box-shadow:0 12px 30px rgba(8,15,32,.18)"><div style="font-size:12px;letter-spacing:3px;color:#94a3b8;font-weight:700">WELCOME TO</div><div style="font-size:36px;line-height:1.15;font-weight:900;letter-spacing:1px;margin-top:8px">SARTHAK</div><div style="font-size:30px;line-height:1.2;font-weight:900;color:#60a5fa;letter-spacing:.5px">STUDY POINT</div><div style="height:1px;background:#475569;margin:20px 0"></div><div style="font-size:30px;font-weight:900;letter-spacing:.5px">ROHIT KUMAR</div><div style="font-size:19px;color:#fbbf24;font-weight:800;margin-top:8px">✦ FOUNDER | OWNER ✦</div><div style="font-size:13px;color:#94a3b8;margin-top:9px;letter-spacing:.5px">THE VISION BEHIND THE PLATFORM</div></div><div class="hero"><div><div class="eyebrow">COMPETITIVE EXAM PREPARATION PLATFORM</div><h1>Prepare smarter.<br>Practice better.</h1><p>Previous Year Papers, विषयवार Practice Sets, Mock Test Series और PDF अध्ययन सामग्री — एक ही प्लेटफॉर्म पर।</p><div class="row"><button class="btn" onclick="go('market')">Explore Courses →</button><button class="btn light" onclick="go('teacher')">Become a Teacher</button></div></div><div class="heroArt">🎓<br><span style="font-size:18px">Your success starts here</span><div style="font-size:12px;color:#dce7ff;margin-top:12px">15% platform commission · 85% teacher share</div></div></div>
+<div class="exam-first">
+ <div class="exam-first-head"><div><h2>अपनी परीक्षा की तैयारी यहाँ से शुरू करें</h2><p>सबसे पहले प्रश्नपत्र चुनें, अभ्यास करें या पूरा मॉक टेस्ट दें।</p></div><span class="pill blue">EXAM PREPARATION ZONE</span></div>
+ <div class="exam-shortcuts">
+  <button class="exam-shortcut" onclick="openExamZone('previous')" style="text-align:left">
+   <span class="shortcut-icon">📚</span><div><h3>Previous Year Papers</h3><p>पिछले वर्षों के प्रश्नपत्र हल करें और परीक्षा का पैटर्न समझें।</p></div><span class="shortcut-link">प्रश्नपत्र देखें →</span>
+  </button>
+  <button class="exam-shortcut" onclick="openExamZone('practice')" style="text-align:left">
+   <span class="shortcut-icon">✍️</span><div><h3>Paper Practice</h3><p>विषयवार, अध्यायवार और टॉपिक के अनुसार प्रश्नों का अभ्यास करें।</p></div><span class="shortcut-link">अभ्यास शुरू करें →</span>
+  </button>
+  <button class="exam-shortcut" onclick="openExamZone('mock')" style="text-align:left">
+   <span class="shortcut-icon">⏱️</span><div><h3>Set Mock Test</h3><p>समय सीमा, प्रश्न-पैलेट और रिजल्ट के साथ पूरी परीक्षा दें।</p></div><span class="shortcut-link">मॉक टेस्ट चुनें →</span>
+  </button>
+ </div>
+</div>
+<div class="stats"><div class="stat"><b id="hCourses">0</b><span>Video courses (later phase)</span></div><div class="stat"><b id="hTeachers">0</b><span>Teacher partners (later phase)</span></div><div class="stat"><b id="hTests">2</b><span>Practice tests</span></div><div class="stat"><b>15%</b><span>Platform commission</span></div></div>
+
+<div class="head"><div><h2>अपना Sarthak Store</h2><p>PDF Notes, Previous Year Papers, Practice Sets और Mock Test Packs</p></div><button class="btn light small" onclick="go('sarthakstore')">सभी सामग्री देखें</button></div>
+<div class="notice">Sarthak Store में आपकी अपनी सामग्री बिकेगी। Teacher Marketplace में दूसरे शिक्षकों के कोर्स उपलब्ध होंगे।</div>
+<div class="head"><div><h2>Featured Courses</h2><p>Explore programmes from our teachers.</p></div><button class="btn light small" onclick="go('market')">View all</button></div><div id="homeCourses" class="grid"></div>
+<div class="head"><div><h2>Teach with Sarthak</h2><p>Share your knowledge and reach more students.</p></div></div><div class="panel row between"><div><b>Are you an educator?</b><p class="muted">Apply as a teacher, publish courses and track your earnings.</p></div><button class="btn" onclick="go('teacher')">Teacher Registration</button></div></section>
+<section id="examzone" class="page">
+ <div class="head"><div><h2>Exam Preparation Zone</h2><p>Previous Year Papers · Paper Practice · Set Mock Test</p></div><span class="pill blue">EXAM CENTRE</span></div>
+ <div class="tabs" id="examZoneTabs">
+  <button class="tab active" data-zone="previous">Previous Year Papers</button>
+  <button class="tab" data-zone="practice">Paper Practice</button>
+  <button class="tab" data-zone="mock">Set Mock Test</button>
+ </div>
+ <div id="zonePrevious" class="zoneContent">
+  <div class="notice">परीक्षा और वर्ष चुनकर पुराने प्रश्नपत्र देखें। नीचे दिए गए प्रश्न केवल डेमो हैं; इन्हें आधिकारिक Previous Year Paper न मानें। Admin द्वारा सत्यापित पेपर अपलोड होने पर यहाँ PDF और ऑनलाइन हल करने का विकल्प मिलेगा।</div>
+  <div class="exam-filter"><div class="field"><label>Exam</label><select id="pyExam"><option>RRB Group D</option><option>RRB NTPC</option><option>RRB JE</option><option>SSC CGL</option><option>SSC CHSL</option><option>Banking</option></select></div><div class="field"><label>Year</label><select id="pyYear"><option>2025</option><option>2024</option><option>2023</option><option>2022</option><option>2021</option></select></div><button class="btn small" onclick="filterPapers()">Search Papers</button></div>
+  <div id="pyPaperList" class="zone-list"></div>
+ </div>
+ <div id="zonePractice" class="zoneContent hide">
+  <div class="notice">अपना विषय और कठिनाई चुनें। अभ्यास में उत्तर देने के बाद सही उत्तर और छोटी व्याख्या दिखाई जाएगी। अभ्यास के दौरान समय की बाध्यता नहीं है।</div>
+  <div class="exam-filter"><div class="field"><label>Subject</label><select id="practiceSubject"><option>General Awareness</option><option>Mathematics</option><option>Reasoning</option><option>English</option></select></div><div class="field"><label>Difficulty</label><select id="practiceLevel"><option>All levels</option><option>Easy</option><option>Moderate</option></select></div><button class="btn small" onclick="startPractice()">Start Practice</button></div>
+  <div class="panel"><h3>Topic-wise Practice</h3><div class="zone-list">
+   <div class="zone-item"><h4>🔢 Mathematics</h4><p>Arithmetic · Algebra · Geometry</p><button class="btn light small" onclick="setPractice('Mathematics')">Practice Now</button></div>
+   <div class="zone-item"><h4>🧠 Reasoning</h4><p>Analogy · Series · Coding-Decoding</p><button class="btn light small" onclick="setPractice('Reasoning')">Practice Now</button></div>
+   <div class="zone-item"><h4>🌍 General Awareness</h4><p>History · Geography · Polity · Science</p><button class="btn light small" onclick="setPractice('General Awareness')">Practice Now</button></div>
+   <div class="zone-item"><h4>📝 English</h4><p>Grammar · Vocabulary · Comprehension</p><button class="btn light small" onclick="setPractice('English')">Practice Now</button></div>
+  </div><div id="practiceLaunch" class="exam-tools"></div></div>
+ </div>
+ <div id="zoneMock" class="zoneContent hide">
+  <div class="notice"><b>Mock Test Centre:</b> पहले Free Mock Test देकर सिस्टम आज़माएँ। Paid Test Series का वास्तविक भुगतान अभी सक्रिय नहीं है।</div>
+  <div class="zone-list">
+   <div class="zone-item" style="border:2px solid #16845b">
+    <div class="row between"><h4>🟢 Free Mock Test – Set 01</h4><span class="pill">FREE</span></div>
+    <p>10 प्रश्न · 10 मिनट · सही उत्तर +1 · गलत उत्तर −0.25</p>
+    <p class="muted">परीक्षा जैसा टाइमर, प्रश्न-पैलेट, Mark for Review और परिणाम।</p>
+    <button class="btn green" onclick="startMock('free')">Start Free Mock Test</button>
+   </div>
+   <div class="zone-item" style="border:2px solid #d8a13a">
+    <div class="row between"><h4>⭐ Paid Mock Test Series – Set 01</h4><span class="pill gold">PAID</span></div>
+    <p>Full-length test series · अनेक सेट · विस्तृत परिणाम विश्लेषण</p>
+    <p><b>Demo price: ₹99</b></p>
+    <p class="muted">असली भुगतान gateway जुड़ने तक खरीद केवल demo रहेगी।</p>
+    <button class="btn" onclick="buyMockSeries()">View Paid Test Series</button>
+   </div>
+  </div>
+  <div class="panel" style="margin-top:13px">
+   <h3>Mock Test कैसे काम करेगा?</h3>
+   <p class="muted">Start Free Mock Test दबाएँ → निर्देश पढ़ें → परीक्षा दें → Submit करें → Score और Answer Explanation देखें।</p>
+  </div>
+ </div>
+
+ <div class="panel" style="margin-top:16px">
+  <div class="head"><div><h3>Admin द्वारा प्रकाशित अध्ययन सामग्री</h3><p>अपलोड किए गए PYQ, Practice Sets, Mock Tests और PDF सामग्री यहाँ दिखेगी।</p></div><span class="pill blue">GENERAL EXAMS</span></div>
+  <div class="exam-filter"><div class="field"><label>Exam</label><select id="publicGenExam" onchange="renderGeneralPublicMaterials()"><option value="all">सभी परीक्षाएँ</option><option>SSC CGL</option><option>SSC CHSL</option><option>SSC MTS</option><option>RRB NTPC</option><option>RRB Group D</option><option>RRB JE</option><option>Banking</option><option>UPSC CSE</option><option>State PCS</option><option>Police / Defence</option><option>Other Competitive Exam</option></select></div><div class="field"><label>सामग्री</label><select id="publicGenType" onchange="renderGeneralPublicMaterials()"><option value="all">सभी प्रकार</option><option value="PYQ">PYQ</option><option value="Practice">Practice Sets</option><option value="Mock">Mock Tests</option><option value="PDF">PDF Notes</option></select></div></div>
+  <div id="generalPublicMaterialList" class="grid"></div>
+ </div>
+
+ <div class="panel" style="margin-top:16px"><div class="head"><div><h3>मेरे Mock Test परिणाम</h3><p>इस डिवाइस पर सुरक्षित पिछले परिणाम</p></div></div><div id="sppResultsList"></div></div>
+</section>
+
+
+<section id="railwayzone" class="page">
+ <div class="head"><div><h2>Railway Departmental Exams</h2><p>रेलवे कर्मचारियों की विभागीय परीक्षाओं के लिए अलग तैयारी केंद्र</p></div><span class="pill blue">SPECIAL RAILWAY ZONE</span></div>
+ <div class="notice"><b>यह General Competitive Exams से अलग विभाग है।</b> यहाँ केवल Railway GDCE और LDCE से संबंधित Previous Year Questions, Practice Sets, Mock Test Series और PDF सामग्री रखी जाएगी। आधिकारिक प्रश्नपत्र/उत्तर-कुंजी उपलब्ध होने पर स्रोत और वर्ष स्पष्ट लिखे जाएँगे।</div>
+ <div class="railway-hero-grid">
+  <button class="railway-exam-card" onclick="selectRailwayExam('GDCE')"><span class="shortcut-icon">🚆</span><h2>GDCE</h2><p>General Departmental Competitive Examination</p><small>GDCE PYQs · Practice Sets · Mock Tests · PDF Notes</small></button>
+  <button class="railway-exam-card" onclick="selectRailwayExam('LDCE')"><span class="shortcut-icon">🛤️</span><h2>LDCE</h2><p>Limited Departmental Competitive Examination</p><small>LDCE PYQs · Practice Sets · Mock Tests · PDF Notes</small></button>
+ </div>
+ <div class="panel" style="margin-top:16px">
+  <div class="two">
+   <div class="field"><label>परीक्षा चुनें</label><select id="railwayExamSelect" onchange="renderRailwayZone()"><option value="GDCE">GDCE</option><option value="LDCE">LDCE</option></select></div>
+   <div class="field"><label>सामग्री का प्रकार</label><select id="railwayTypeSelect" onchange="renderRailwayZone()"><option value="all">सभी सामग्री</option><option value="PYQ">Previous Year Papers</option><option value="Practice">Practice Sets</option><option value="Mock">Mock Test Series</option><option value="PDF">PDF Notes</option></select></div>
+  </div>
+  <div class="tabs" id="railwayTabs">
+   <button class="tab active" onclick="setRailwayType('all')">All</button>
+   <button class="tab" onclick="setRailwayType('PYQ')">PYQs</button>
+   <button class="tab" onclick="setRailwayType('Practice')">Practice Sets</button>
+   <button class="tab" onclick="setRailwayType('Mock')">Mock Tests</button>
+   <button class="tab" onclick="setRailwayType('PDF')">PDF Notes</button>
+  </div>
+  <div id="railwayContent" class="grid"></div>
+ </div>
+ <div class="notice" style="margin-top:16px"><b>महत्वपूर्ण:</b> GDCE और LDCE के पद, पात्रता, पाठ्यक्रम और परीक्षा-पैटर्न अलग-अलग अधिसूचनाओं के अनुसार बदल सकते हैं। इसलिए सामग्री को Railway Zone/Division, पद, विभाग, वर्ष और Notification के अनुसार वर्गीकृत किया जाएगा।</div>
+</section>
+
+<section id="sarthakstore" class="page">
+ <div class="head"><div><h2>Sarthak Store</h2><p>PDF Notes, Previous Year Papers, Practice Sets और Mock Test Series</p></div><span class="pill blue">OWN PRODUCTS</span></div>
+ <div class="notice"><b>यह आपका अपना स्टोर है।</b> यहाँ आप स्वयं तैयार की गई या बिक्री के अधिकार वाली सामग्री बेचेंगे। शिक्षक के कोर्स अलग Teacher Marketplace में रहेंगे।</div>
+ <div class="tabs"><button class="tab active" data-tab="ownAll">All Products</button><button class="tab" data-tab="ownPapers">PDF & Papers</button><button class="tab" data-tab="ownMocks">Mock Test Packs</button></div>
+ <div id="ownAll" class="subtab active"><div class="grid" id="ownProductGrid"></div></div>
+ <div id="ownPapers" class="subtab"><div class="grid" id="ownPaperGrid"></div></div>
+ <div id="ownMocks" class="subtab"><div class="grid" id="ownMockGrid"></div></div>
+</section>
+
+<section id="medialab" class="page">
+ <div class="head"><div><h2>Video Learning & Live Classroom</h2><p>Recorded lessons और live classes — अपने platform तथा external services, दोनों के लिए।</p></div><span class="pill blue">V13 · MEDIA</span></div>
+ <div class="notice"><b>Prototype सीमा:</b> इस संस्करण में video file का local preview, YouTube Unlisted link embedding, live class scheduling और external meeting link खोलने का demo है। वास्तविक private hosting, सभी विद्यार्थियों तक upload, live audio/video streaming, login-based access और recording के लिए backend तथा video/live provider जोड़ना आवश्यक है।</div>
+ <div class="tabs">
+  <button class="tab active" data-tab="mediaLibrary">Recorded Videos</button>
+  <button class="tab" data-tab="mediaLive">Live Classes</button>
+  <button class="tab" data-tab="mediaPlayer">Student Learning Room</button>
+ </div>
+ <div id="mediaLibrary" class="subtab active">
+  <div class="two">
+   <div class="panel">
+    <h3>नया Recorded Lesson जोड़ें</h3>
+    <div class="field"><label>Lesson / Video Title</label><input id="mediaTitle" placeholder="जैसे: भारतीय संविधान — मौलिक अधिकार"></div>
+    <div class="field"><label>Course / Exam</label><input id="mediaCourse" placeholder="जैसे: SSC CGL / RRB JE Civil"></div>
+    <div class="field"><label>Video Source</label><select id="mediaSource" onchange="toggleMediaSource()"><option value="local">Upload video file (इस डिवाइस पर preview)</option><option value="youtube">YouTube Unlisted URL</option></select></div>
+    <div id="localVideoField" class="field"><label>Video File</label><input id="mediaFile" type="file" accept="video/*"><small class="muted">यह केवल इसी browser session में local preview देगा; server पर upload नहीं होगा।</small></div>
+    <div id="youtubeVideoField" class="field hide"><label>YouTube URL</label><input id="youtubeUrl" placeholder="https://www.youtube.com/watch?v=..."></div>
+    <div class="field"><label>Lesson Description</label><textarea id="mediaDesc" placeholder="इस वीडियो में क्या पढ़ाया जाएगा?"></textarea></div>
+    <button class="btn" onclick="addMediaLesson()">Add Recorded Lesson</button>
+    <p class="muted" id="mediaStatus"></p>
+   </div>
+   <div class="panel">
+    <h3>दोनों Video Hosting विकल्प</h3>
+    <div class="qbox"><b>1. Integrated / Private Video Hosting</b><small>Production में Cloudflare Stream, Mux या Vimeo जैसे provider से secure upload, adaptive streaming, access control और playback जोड़ेंगे।</small></div>
+    <div class="qbox"><b>2. YouTube Unlisted</b><small>Teacher/admin YouTube पर video upload करके Unlisted link यहाँ जोड़ सकता है। शुरुआत में कम खर्च वाला विकल्प; link आगे share हो सकता है, इसलिए यह पूर्ण private protection नहीं है।</small></div>
+    <div class="qbox"><b>Course Structure</b><small>Course → Chapters → Lessons → PDF Notes → Progress Tracking. Paid course access को payment और user account से जोड़ना होगा।</small></div>
+   </div>
+  </div>
+  <div class="panel" style="margin-top:16px"><h3>Recorded Lesson Library</h3><div id="mediaLessonList" class="grid"></div></div>
+ </div>
+ <div id="mediaLive" class="subtab">
+  <div class="two">
+   <div class="panel">
+    <h3>Live Class Schedule करें</h3>
+    <div class="field"><label>Class Title</label><input id="liveTitle" placeholder="जैसे: RRB JE Civil — Soil Mechanics"></div>
+    <div class="field"><label>Teacher Name</label><input id="liveTeacher" placeholder="Teacher name"></div>
+    <div class="two">
+     <div class="field"><label>Date & Time</label><input id="liveDate" type="datetime-local"></div>
+     <div class="field"><label>Mode</label><select id="liveMode" onchange="toggleLiveMode()"><option value="internal">Integrated classroom (demo room)</option><option value="external">Zoom / Google Meet / other link</option></select></div>
+    </div>
+    <div id="externalLiveField" class="field hide"><label>Meeting URL</label><input id="liveUrl" placeholder="https://meet.google.com/..."></div>
+    <div class="field"><label>Course / Exam</label><input id="liveCourse" placeholder="RRB JE / SSC / UPSC"></div>
+    <button class="btn" onclick="scheduleLiveClass()">Schedule Live Class</button>
+    <p class="muted">Integrated room यहाँ interface demo है; वास्तविक live video/audio के लिए WebRTC और managed live provider आवश्यक होगा।</p>
+   </div>
+   <div class="panel">
+    <h3>दोनों Live Class विकल्प</h3>
+    <div class="qbox"><b>1. Integrated Live Classroom</b><small>Website के अंदर live video, teacher screen share, chat, doubt box, attendance और recording. Production में Agora / 100ms / LiveKit जैसे provider तथा backend जोड़ेंगे।</small></div>
+    <div class="qbox"><b>2. External Live Class</b><small>Zoom या Google Meet link से शुरुआत। Class schedule, reminder और join button Sarthak Study Point पर दिखेंगे; meeting provider पर चलेगी।</small></div>
+   </div>
+  </div>
+  <div class="panel" style="margin-top:16px"><h3>Upcoming / Scheduled Classes</h3><div id="liveClassList"></div></div>
+ </div>
+ <div id="mediaPlayer" class="subtab">
+  <div class="panel"><h3>Student Learning Room</h3><p class="muted">यहाँ उपलब्ध recorded lessons चलेंगे और scheduled live classes join की जा सकेंगी। Demo content में access control लागू नहीं है।</p><div id="studentMediaList"></div><div id="mediaPlayback" class="media-playback"><p class="muted">कोई lesson चुना नहीं गया है।</p></div></div>
+ </div>
+</section>
+
+<section id="market" class="page"><div class="head"><div><h2>Course Marketplace</h2><p>Courses by approved teachers.</p></div><span class="pill blue">Student Zone</span></div><div class="grid" id="marketCourses"></div></section>
+<section id="teacher" class="page"><div class="head"><div><h2>Teacher Dashboard</h2><p>Manage your profile, courses, learning content and earnings.</p></div><span class="pill gold">Teacher Workspace</span></div>
+<div class="stats"><div class="stat"><b id="thCourses">0</b><span>My courses</span></div><div class="stat"><b id="thSales">0</b><span>Demo enrolments</span></div><div class="stat"><b id="thGross">₹0</b><span>Gross sales</span></div><div class="stat"><b id="thNet">₹0</b><span>Your 85% share</span></div></div>
+<div class="tabs"><button class="tab active" data-tab="tProfile">Profile / Apply</button><button class="tab" data-tab="tCourses">My Courses</button><button class="tab" data-tab="tCreate">Add Course</button><button class="tab" data-tab="tEarnings">Earnings</button></div>
+<div id="tProfile" class="subtab active"><div class="two"><div class="panel"><h3>Teacher Registration / Profile</h3><div class="field"><label>Full name</label><input id="teacherName" placeholder="Teacher full name"></div><div class="field"><label>Email / Mobile</label><input id="teacherContact" placeholder="Email or mobile number"></div><div class="field"><label>Subject expertise</label><input id="teacherSubject" placeholder="e.g. Mathematics, Reasoning, GS"></div><div class="field"><label>Short bio</label><textarea id="teacherBio" placeholder="Your qualification and teaching experience"></textarea></div><button class="btn" onclick="applyTeacher()">Submit Teacher Application</button><p id="teacherStatus" class="muted"></p></div><div class="panel"><h3>Teacher Guidelines</h3><ul class="muted" style="line-height:2;padding-left:18px"><li>Only original or licensed teaching content upload करें।</li><li>हर course का सही विवरण और price दें।</li><li>Admin approval के बाद course marketplace में दिखेगा।</li><li>हर eligible sale पर 15% platform commission और 85% teacher share का हिसाब होगा।</li></ul><span class="pill">Approval required</span></div></div></div>
+<div id="tCourses" class="subtab"><div class="panel"><h3>My Course List</h3><div id="teacherCourseList"></div></div></div>
+<div id="tCreate" class="subtab"><div class="panel"><h3>Create a Course</h3><div class="field"><label>Course title</label><input id="tcName" placeholder="e.g. RRB JE Civil Complete Course"></div><div class="field"><label>Description</label><textarea id="tcDesc" placeholder="Topics, classes, duration and learning outcomes"></textarea></div><div class="three"><div class="field"><label>Price ₹</label><input id="tcPrice" type="number" value="499"></div><div class="field"><label>Billing</label><select id="tcBilling"><option value="one">One-time</option><option value="monthly">Monthly</option></select></div><div class="field"><label>Category</label><select id="tcCat"><option>Railway</option><option>SSC</option><option>Banking</option><option>State Exams</option><option>Other</option></select></div></div><div class="field"><label>Course thumbnail (optional)</label><input id="tcThumb" type="file" accept="image/*"></div><button class="btn" onclick="teacherAddCourse()">Submit Course for Approval</button><p class="muted">Course admin approval से पहले public marketplace में नहीं दिखेगा।</p></div></div>
+<div id="tEarnings" class="subtab"><div class="panel"><h3>My Earnings Statement</h3><p class="muted">Illustrative calculation: gross eligible sales minus 15% platform commission. Actual settlement requires verified payment and payout integration.</p><table class="table"><thead><tr><th>Course</th><th>Gross</th><th>15% Fee</th><th>Teacher 85%</th></tr></thead><tbody id="teacherEarnings"></tbody></table><div class="notice">इस prototype में कोई वास्तविक बिक्री या payout नहीं हुआ है। Bank payout के लिए KYC, payment provider marketplace/split-settlement setup और legal/tax configuration जरूरी होगा।</div></div></div></section>
+<section id="student" class="page"><div class="head"><div><h2>Student Dashboard</h2><p>Your purchased learning, tests and progress.</p></div><span class="pill blue">Student Zone</span></div><div class="stats"><div class="stat"><b id="stEnrolled">0</b><span>Enrolled courses</span></div><div class="stat"><b id="stTests">0</b><span>Tests available</span></div><div class="stat"><b id="stSpent">₹0</b><span>Demo purchases</span></div><div class="stat"><b>—</b><span>Learning progress</span></div></div><div class="tabs"><button class="tab active" data-tab="sLearning">My Learning</button><button class="tab" data-tab="sTests">My Tests</button><button class="tab" data-tab="sOrders">Orders</button></div><div id="sLearning" class="subtab active"><div class="panel"><h3>My Courses</h3><div id="studentLearning"></div></div></div><div id="sTests" class="subtab"><div class="panel"><h3>Available Tests</h3><p class="muted">यह marketplace prototype है; पूर्ण CBT engine और test bank अलग integration में जुड़ेगा।</p><div id="studentTests"></div></div></div><div id="sOrders" class="subtab"><div class="panel"><h3>Purchase History</h3><div id="studentOrders"></div></div></div></section>
+<section id="admin" class="page"><div class="head"><div><h2>Main Admin Dashboard</h2><p>Platform owner control centre — Rohit / Sarthak Study Point.</p></div><span class="pill gold">SUPER ADMIN</span></div><div class="stats"><div class="stat"><b id="aCourses">0</b><span>Total courses</span></div><div class="stat"><b id="aPending">0</b><span>Pending approvals</span></div><div class="stat"><b id="aTeachers">0</b><span>Teacher applications</span></div><div class="stat"><b id="aCommission">₹0</b><span>Demo commission</span></div></div><div class="tabs"><button class="tab active" data-tab="aOverview">Overview</button><button class="tab" data-tab="aTeachers">Teachers</button><button class="tab" data-tab="aApprovals">Course Approvals</button><button class="tab" data-tab="aSales">Sales & Commission</button><button class="tab" data-tab="aSettings">Platform Settings</button><button class="tab" data-tab="aOwnStore">Sarthak Store</button><button class="tab" data-tab="aRailwayContent">Railway Content Upload</button><button class="tab" data-tab="aGeneralContent">General Exam Upload</button></div>
+<div id="aOverview" class="subtab active"><div class="two"><div class="panel"><h3>Marketplace Summary</h3><p class="muted">Platform commission rate</p><b style="font-size:34px;color:var(--blue)">15%</b><p class="muted">Teacher share: 85% before applicable fees/taxes.</p></div><div class="panel"><h3>Admin Controls</h3><p class="muted">Approve teachers, review courses, monitor demo sales and configure policies.</p><span class="pill">Owner access</span><p class="muted">Launch से पहले: domain/hosting, shared database, admin login, payment gateway और server-side PDF storage जोड़ना होगा।</p></div></div><div class="notice">Security note: अभी role-based access केवल interface demo है। Production में Admin, Teacher और Student permissions server पर enforce होंगी; केवल छिपे हुए buttons सुरक्षा नहीं देते।</div></div>
+<div id="aTeachers" class="subtab"><div class="panel"><h3>Teacher Applications</h3><div id="teacherApplications"></div></div></div>
+<div id="aApprovals" class="subtab"><div class="panel"><h3>Course Approval Queue</h3><div id="approvalList"></div></div></div>
+<div id="aSales" class="subtab"><div class="panel"><h3>Sales & Commission Ledger</h3><table class="table"><thead><tr><th>Course</th><th>Gross</th><th>Platform 15%</th><th>Teacher 85%</th><th>Status</th></tr></thead><tbody id="salesRows"></tbody></table></div></div>
+<div id="aSettings" class="subtab"><div class="panel"><h3>Platform Commission</h3><div class="field"><label>Commission percentage</label><input id="commissionRate" type="number" min="0" max="100" value="15"></div><button class="btn" onclick="saveCommission()">Save Commission</button><p class="muted">Prototype में rate बदलने पर अगली demo calculations पर लागू होगा। Production में policy versioning और teacher agreement आवश्यक होंगे।</p></div></div>
+
+<div id="aRailwayContent" class="subtab"><div class="notice"><b>V17 Storage:</b> PDF और सामग्री इस डिवाइस के browser में IndexedDB/local storage में सुरक्षित रहेगी। दूसरे मोबाइल/विद्यार्थियों को साझा करने के लिए online server अभी आवश्यक है।</div>
+ <div class="notice"><b>रेलवे सामग्री प्रबंधन:</b> GDCE और LDCE के PYQ, Practice Sets, Mock Tests और PDF Notes यहाँ से जोड़ें। इस Prototype में सामग्री इसी browser session तक उपलब्ध रहती है; वास्तविक सर्वर पर अपलोड और स्थायी संग्रहण अभी नहीं जुड़ा है।</div>
+ <div class="two">
+  <div class="panel">
+   <h3>नई Railway सामग्री जोड़ें</h3>
+   <div class="field"><label>परीक्षा श्रेणी</label><select id="admRailExam"><option value="GDCE">GDCE</option><option value="LDCE">LDCE</option></select></div>
+   <div class="field"><label>सामग्री का प्रकार</label><select id="admRailType" onchange="toggleRailUploadFields()"><option value="PYQ">Previous Year Paper (PYQ)</option><option value="Practice">Practice Set</option><option value="Mock">Mock Test Series</option><option value="PDF">PDF Notes / Study Material</option></select></div>
+   <div class="field"><label>शीर्षक</label><input id="admRailTitle" placeholder="जैसे: GDCE JE Civil PYQ 2025"></div>
+   <div class="two">
+    <div class="field"><label>वर्ष</label><input id="admRailYear" placeholder="जैसे: 2025"></div>
+    <div class="field"><label>पद / विभाग</label><input id="admRailPost" placeholder="जैसे: JE Civil / Engineering"></div>
+   </div>
+   <div class="field"><label>जोन / डिवीजन (वैकल्पिक)</label><input id="admRailDivision" placeholder="जैसे: NWR / Bikaner"></div>
+   <div class="field"><label>विवरण</label><textarea id="admRailDesc" placeholder="सामग्री का संक्षिप्त विवरण"></textarea></div>
+   <div class="field"><label>मूल्य (₹) — मुफ्त सामग्री के लिए 0</label><input id="admRailPrice" type="number" min="0" value="0"></div>
+   <div id="admRailFileWrap" class="field"><label>PDF File</label><input id="admRailFile" type="file" accept="application/pdf,.pdf"><small class="muted">PDF इस browser में local preview/download के लिए जुड़ सकती है।</small></div>
+   <div id="admRailQuestionsWrap" class="field hide"><label>प्रश्न (JSON format)</label><textarea id="admRailQuestions" rows="7" placeholder='[{"q":"प्रश्न लिखें","o":["विकल्प A","विकल्प B","विकल्प C","विकल्प D"],"a":0,"e":"व्याख्या"}]'></textarea><small class="muted">Mock / Practice के लिए प्रश्न, चार विकल्प, सही उत्तर का क्रमांक (0–3) और व्याख्या दें।</small></div>
+   <button class="btn" onclick="addRailwayAdminMaterial()">Publish Railway Material</button>
+   <p class="muted" id="admRailStatus"></p>
+  </div>
+  <div class="panel">
+   <h3>अपलोड की गई सामग्री</h3><button class="btn light small" onclick="sppExportBackup()">Export Content Backup</button>
+   <div id="adminRailMaterialList"></div>
+  </div>
+ </div>
+</div>
+
+<div id="aGeneralContent" class="subtab"><div class="notice"><b>V17 Storage:</b> PDF और सामग्री इस डिवाइस के browser में IndexedDB/local storage में सुरक्षित रहेगी। दूसरे मोबाइल/विद्यार्थियों को साझा करने के लिए online server अभी आवश्यक है।</div>
+ <div class="notice"><b>General Exam Content Manager:</b> यहाँ SSC, Banking, RRB की सामान्य भर्तियाँ, UPSC, State Exams और अन्य प्रतियोगी परीक्षाओं के PYQ, Practice Sets, Mock Tests और PDF Notes जोड़ें। रेलवे GDCE/LDCE सामग्री Railway Content Upload में ही रखें।</div>
+ <div class="two">
+  <div class="panel">
+   <h3>नई General Exam सामग्री जोड़ें</h3>
+   <div class="field"><label>Exam Category</label><select id="admGenExam"><option>SSC CGL</option><option>SSC CHSL</option><option>SSC MTS</option><option>RRB NTPC</option><option>RRB Group D</option><option>RRB JE</option><option>Banking</option><option>UPSC CSE</option><option>State PCS</option><option>Police / Defence</option><option>Other Competitive Exam</option></select></div>
+   <div class="field"><label>Content Type</label><select id="admGenType" onchange="toggleGeneralUploadFields()"><option value="PYQ">Previous Year Paper (PYQ)</option><option value="Practice">Practice Set</option><option value="Mock">Mock Test Series</option><option value="PDF">PDF Notes / Study Material</option></select></div>
+   <div class="field"><label>Title</label><input id="admGenTitle" placeholder="जैसे: SSC CGL Tier-I PYQ 2025"></div>
+   <div class="two">
+    <div class="field"><label>Year</label><input id="admGenYear" placeholder="2025"></div>
+    <div class="field"><label>Subject / Topic</label><input id="admGenSubject" placeholder="Reasoning / Polity / Maths"></div>
+   </div>
+   <div class="field"><label>Language</label><select id="admGenLanguage"><option>Hindi</option><option>English</option><option>Hindi & English</option></select></div>
+   <div class="field"><label>Description</label><textarea id="admGenDesc" placeholder="इस सामग्री का विवरण"></textarea></div>
+   <div class="field"><label>Price (₹) — Free के लिए 0</label><input id="admGenPrice" type="number" min="0" value="0"></div>
+   <div id="admGenFileWrap" class="field"><label>PDF File</label><input id="admGenFile" type="file" accept="application/pdf,.pdf"><small class="muted">यह फाइल अभी इसी browser session में local preview/download के लिए उपलब्ध होगी।</small></div>
+   <div id="admGenQuestionsWrap" class="field hide"><label>Questions (JSON)</label><textarea id="admGenQuestions" rows="7" placeholder='[{"q":"भारत का संविधान कब लागू हुआ?","o":["1947","1950","1949","1952"],"a":1,"e":"26 जनवरी 1950"}]'></textarea><small class="muted">हर प्रश्न में q = प्रश्न, o = विकल्प, a = सही विकल्प का क्रमांक (0 से शुरू), e = व्याख्या।</small></div>
+   <button class="btn" onclick="addGeneralAdminMaterial()">Publish General Exam Material</button>
+  </div>
+  <div class="panel">
+   <h3>Published General Exam Content</h3><button class="btn light small" onclick="sppExportBackup()">Export Content Backup</button>
+   <div id="adminGeneralMaterialList"></div>
+  </div>
+ </div>
+</div>
+</section>
+</main><footer>SARTHAK STUDY POINT · Multi-Teacher Education Marketplace<br><span style="opacity:.7">V17: content persists on this device/browser; cloud sync, shared student accounts, real payments and server storage are not connected.</span></footer>
+
+<div id="testRunner" class="runner">
+ <div class="runner-head"><div><b id="runTitle">Online Test</b><div style="font-size:11px;color:#dce7ff" id="runMeta">Question 1</div></div><div class="row"><b id="runTimer">10:00</b><button class="btn light small" onclick="confirmSubmit()">Submit Test</button><button class="btn light small" onclick="leaveTest()">Exit Test</button></div></div>
+ <div class="runner-main"><div class="runner-card"><div class="row between"><span class="pill blue" id="runSection">Section 1</span><span class="muted" id="runMarks">+1 / −0.25</span></div><div class="runner-q" id="runQuestion"></div><div id="runOptions"></div><div class="runner-actions"><button class="btn light" onclick="previousQuestion()">← Previous</button><div class="row"><button class="btn light" onclick="markReview()">Mark for Review</button><button class="btn" onclick="nextQuestion()">Save & Next →</button></div></div></div><aside class="palette"><b>Question Palette</b><p class="muted">Green: Answered · Yellow: Review · Grey: Not answered</p><div class="palette-grid" id="runPalette"></div><div class="notice">यह CBT का demo है। परीक्षा submit करने पर score और answer review दिखेगा।</div></aside></div>
+</div>
+<div id="modal" class="modal"><div class="modalbox"><div class="row between"><h3 id="modalTitle">Confirm</h3><button class="btn light small" onclick="closeModal()">Close</button></div><div id="modalBody"></div></div></div><div id="toast" class="toast"></div>
+<script>
+let commission=15,next=20;
+let teachers=[{id:1,name:"Sarthak Faculty",contact:"demo@sarthak.in",subject:"General Studies",status:"Approved"},{id:2,name:"Maths Mentor",contact:"maths@example.com",subject:"Mathematics",status:"Approved"}];
+let courses=[
+{id:1,name:"Railway & SSC Foundation",desc:"General Awareness, Reasoning, Maths and practice.",cat:"Railway / SSC",price:499,billing:"one",teacher:1,status:"Approved",sales:2},
+{id:2,name:"SSC CGL Complete Preparation",desc:"Topic-wise classes and exam practice.",cat:"SSC",price:799,billing:"one",teacher:2,status:"Approved",sales:1},
+{id:3,name:"Banking Exam Foundation",desc:"Quantitative Aptitude, English and Reasoning.",cat:"Banking",price:599,billing:"monthly",teacher:2,status:"Approved",sales:0}
+];
+let orders=[{id:1,course:1,student:"Demo Student",amount:499,status:"Demo purchase"},{id:2,course:2,student:"Demo Student",amount:799,status:"Demo purchase"},{id:3,course:1,student:"Demo Student",amount:499,status:"Demo purchase"}];
+
+let ownProducts=[
+{id:101,name:"RRB Group D Previous Year Paper Pack",desc:"Sample pack listing for previous-year paper PDFs.",type:"Previous Year Paper",exam:"RRB Group D",price:49,fileName:"",status:"Published"},
+{id:102,name:"General Awareness Notes PDF",desc:"Topic-wise revision notes for competitive exams.",type:"PDF / Notes",exam:"All Exams",price:79,fileName:"",status:"Published"},
+{id:103,name:"Railway Mock Test Pack – 10 Sets",desc:"Timed practice test pack with answer explanations.",type:"Mock Test Pack",exam:"Railway",price:99,fileName:"",status:"Published"}
+];
+let ownOrders=[];
+
+let applications=[],enrolled=[1,2],tests=[{name:"General Awareness Mock Test",mode:"Free",count:25},{name:"Railway Full Mock Test",mode:"Paid",count:100}];
+const $=id=>document.getElementById(id);function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function toast(s){$('toast').textContent=s;$('toast').style.display='block';clearTimeout(window.tt);window.tt=setTimeout(()=>$('toast').style.display='none',3000)}
+function go(id){
+ const target=document.getElementById(id);
+ if(!target){console.error('Missing page:',id);return;}
+ document.querySelectorAll('.page').forEach(page=>page.classList.remove('active'));
+ target.classList.add('active');
+ document.querySelectorAll('nav button').forEach(btn=>btn.classList.toggle('active',btn.dataset.page===id));
+ window.scrollTo(0,0);
+}
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>go(b.dataset.page));
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{let parent=b.closest('section');parent.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));parent.querySelectorAll('.subtab').forEach(x=>x.classList.remove('active'));b.classList.add('active');$(b.dataset.tab).classList.add('active')});
+function openModal(title,body){$('modalTitle').textContent=title;$('modalBody').innerHTML=body;$('modal').classList.add('show')}function closeModal(){$('modal').classList.remove('show')}
+function login(){openModal('Sign in to Sarthak Study Point',`<p class="muted">Demo sign-in. Production will use verified OTP and server-side role permissions.</p><div class="field"><label>Mobile number / Email</label><input placeholder="Enter mobile or email"></div><div class="field"><label>Password / OTP</label><input type="password" placeholder="Enter password or OTP"></div><button class="btn" onclick="closeModal();toast('Demo only — authentication is not connected')">Continue</button>`)}
+function teacherName(id){return teachers.find(t=>t.id===id)?.name||'Teacher'}
+function card(c){return `<div class="card course"><div class="courseTop"><span>📘</span><span class="pill ${c.status==='Approved'?'':'gold'}">${c.status==='Approved'?'PUBLISHED':'PENDING'}</span></div><div class="courseBody"><h3>${esc(c.name)}</h3><p>${esc(c.desc)}</p><div class="muted">By ${esc(teacherName(c.teacher))} · ${esc(c.cat)}</div><div class="row between" style="margin-top:12px"><b style="font-size:18px;color:var(--navy)">₹${c.price}${c.billing==='monthly'?'/mo':''}</b><button class="btn small" onclick="buy(${c.id})">Enroll</button></div></div></div>`}
+function buy(id){let c=courses.find(x=>x.id===id);openModal('Enroll in '+c.name,`<p>Course fee: <b>₹${c.price}${c.billing==='monthly'?'/month':''}</b></p><p class="muted">Demo checkout only. No real payment will be collected. Live version will grant course access only after verified payment.</p><div class="field"><label>Student name</label><input id="buyerName" value="Demo Student"></div><button class="btn" onclick="demoBuy(${id})">Simulate successful purchase</button>`)}
+function demoBuy(id){let c=courses.find(x=>x.id===id),name=$('buyerName').value.trim()||'Demo Student';orders.push({id:next++,course:id,student:name,amount:c.price,status:"Simulated demo sale"});if(!enrolled.includes(id))enrolled.push(id);c.sales=(c.sales||0)+1;closeModal();render();toast('Demo purchase recorded locally — no money received')}
+function applyTeacher(){let name=$('teacherName').value.trim(),contact=$('teacherContact').value.trim(),subject=$('teacherSubject').value.trim();if(!name||!contact||!subject)return toast('Name, contact और subject भरें');applications.push({id:next++,name,contact,subject,bio:$('teacherBio').value,status:'Pending'});$('teacherStatus').textContent='Application submitted — Main Admin approval pending.';render();toast('Teacher application submitted in demo')}
+function approveTeacher(id){let a=applications.find(x=>x.id===id);a.status='Approved';teachers.push({id:a.id,name:a.name,contact:a.contact,subject:a.subject,status:'Approved'});render();toast('Teacher approved in demo')}
+function teacherAddCourse(){let n=$('tcName').value.trim(),p=+$('tcPrice').value;if(!n||p<0)return toast('Course name और valid price भरें');courses.push({id:next++,name:n,desc:$('tcDesc').value,cat:$('tcCat').value,price:p,billing:$('tcBilling').value,teacher:1,status:'Pending',sales:0});$('tcName').value='';$('tcDesc').value='';render();toast('Course submitted — Admin approval required')}
+function approveCourse(id){let c=courses.find(x=>x.id===id);c.status='Approved';render();toast('Course published in demo marketplace')}
+function rejectCourse(id){let c=courses.find(x=>x.id===id);c.status='Rejected';render();toast('Course rejected in demo')}
+function saveCommission(){let n=+$('commissionRate').value;if(n<0||n>100)return toast('Commission 0 से 100 के बीच रखें');commission=n;render();toast('Commission rate updated to '+n+'%')}
+
+function ownCard(p){return `<div class="card course"><div class="courseTop"><span>${p.type.includes('Mock')?'⏱️':p.type.includes('Paper')?'📚':'📄'}</span><span class="pill blue">SARTHAK STORE</span></div><div class="courseBody"><h3>${esc(p.name)}</h3><p>${esc(p.desc)}</p><div class="muted">${esc(p.type)} · ${esc(p.exam)}</div><div class="row between" style="margin-top:12px"><b style="font-size:18px;color:var(--navy)">₹${p.price}</b><button class="btn small" onclick="buyOwnProduct(${p.id})">Buy Now</button></div></div></div>`}
+function addOwnProduct(){let name=$('ownName').value.trim(),price=Number($('ownPrice').value);if(!name||!Number.isFinite(price)||price<0)return toast('Product name और सही price भरें');let f=$('ownFile').files[0];ownProducts.unshift({id:next++,name,desc:$('ownDesc').value,type:$('ownType').value,exam:$('ownExam').value,price,fileName:f?f.name:'',status:'Published'});$('ownName').value='';$('ownDesc').value='';$('ownFile').value='';render();toast('Product Sarthak Store में demo रूप से जोड़ दिया गया');}
+function buyOwnProduct(id){let p=ownProducts.find(x=>x.id===id);openModal('Buy '+p.name,`<p>Price: <b>₹${p.price}</b></p><p class="muted">Demo checkout only — वास्तविक payment अभी connected नहीं है।</p><button class="btn" onclick="confirmOwnBuy(${id})">Simulate Purchase</button>`)}
+function confirmOwnBuy(id){let p=ownProducts.find(x=>x.id===id);ownOrders.push({id:next++,product:id,amount:p.price,status:'Demo purchase'});closeModal();render();toast('Demo purchase record हुआ; वास्तविक भुगतान नहीं हुआ');}
+
+
+// V13 media module: browser-local demo only; production requires authenticated backend/provider integration.
+let mediaLessons = [];
+let liveClasses = [];
+let activeMediaUrls = [];
+function toggleMediaSource(){
+ const yt=$('mediaSource').value==='youtube';
+ $('youtubeVideoField').classList.toggle('hide',!yt);
+ $('localVideoField').classList.toggle('hide',yt);
+}
+function toggleLiveMode(){
+ const ext=$('liveMode').value==='external';
+ $('externalLiveField').classList.toggle('hide',!ext);
+}
+function youtubeEmbedUrl(raw){
+ try{
+  const u=new URL(raw);
+  let id='';
+  if(u.hostname==='youtu.be') id=u.pathname.slice(1);
+  else if(u.hostname.endsWith('youtube.com')) id=u.searchParams.get('v')||((u.pathname.match(/\/embed\/([^/?]+)/)||[])[1])||'';
+  return /^[A-Za-z0-9_-]{6,}$/.test(id)?'https://www.youtube-nocookie.com/embed/'+id:null;
+ }catch(e){return null}
+}
+function addMediaLesson(){
+ const title=$('mediaTitle').value.trim(), course=$('mediaCourse').value.trim();
+ if(!title)return toast('Video title भरें');
+ const item={id:Date.now()+Math.random(),title,course,desc:$('mediaDesc').value.trim(),source:$('mediaSource').value,url:'',fileName:''};
+ if(item.source==='youtube'){
+  const embed=youtubeEmbedUrl($('youtubeUrl').value.trim());
+  if(!embed)return toast('सही YouTube URL डालें');
+  item.url=embed;
+ }else{
+  const f=$('mediaFile').files[0];
+  if(!f)return toast('Video file चुनें');
+  if(!f.type.startsWith('video/'))return toast('कृपया video file चुनें');
+  item.url=URL.createObjectURL(f); item.fileName=f.name; activeMediaUrls.push(item.url);
+ }
+ mediaLessons.unshift(item);
+ $('mediaTitle').value='';$('mediaCourse').value='';$('mediaDesc').value='';$('youtubeUrl').value='';$('mediaFile').value='';
+ renderMedia();toast('Lesson इस browser demo में जोड़ दिया गया');
+}
+function playMediaLesson(id){
+ const x=mediaLessons.find(v=>v.id===id);if(!x)return;
+ const player=$('mediaPlayback');
+ player.innerHTML=x.source==='youtube'
+  ? `<h4>${esc(x.title)}</h4><iframe src="${x.url}" title="${esc(x.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+  : `<h4>${esc(x.title)}</h4><video controls playsinline src="${x.url}"></video><small>${esc(x.fileName)} — local preview only</small>`;
+}
+function scheduleLiveClass(){
+ const title=$('liveTitle').value.trim(), date=$('liveDate').value, mode=$('liveMode').value;
+ if(!title||!date)return toast('Class title और date/time भरें');
+ let url='';
+ if(mode==='external'){
+  url=$('liveUrl').value.trim();
+  try{const u=new URL(url);if(!['http:','https:'].includes(u.protocol))throw 0;}catch(e){return toast('सही Zoom / Google Meet URL डालें')}
+ }
+ liveClasses.unshift({id:Date.now()+Math.random(),title,teacher:$('liveTeacher').value.trim(),date,mode,url,course:$('liveCourse').value.trim()});
+ $('liveTitle').value='';$('liveTeacher').value='';$('liveUrl').value='';$('liveCourse').value='';
+ renderMedia();toast('Live class schedule demo में जोड़ दी गई');
+}
+function joinLiveClass(id){
+ const c=liveClasses.find(v=>v.id===id);if(!c)return;
+ if(c.mode==='external'){window.open(c.url,'_blank','noopener');return;}
+ openModal('Integrated Live Classroom — Demo',`<p><b>${esc(c.title)}</b></p><div class="media-playback"><div style="font-size:42px;text-align:center;padding:25px">🎥</div><p style="text-align:center">यह classroom interface preview है। वास्तविक live audio/video अभी connected नहीं है।</p><div class="row" style="justify-content:center"><button class="btn light small" onclick="toast('Demo chat: production में real-time chat service जोड़ी जाएगी')">Chat</button><button class="btn light small" onclick="toast('Screen sharing production integration में उपलब्ध होगी')">Share Screen</button></div></div>`);
+}
+function renderMedia(){
+ const cards=mediaLessons.map(x=>`<div class="media-card"><h4>${esc(x.title)}</h4><small>${esc(x.course||'Course not specified')} · ${x.source==='youtube'?'YouTube Unlisted':'Local video preview'}<br>${esc(x.desc||x.fileName||'')}</small><button class="btn small" onclick="playMediaLesson(${x.id})">Play Lesson</button></div>`).join('')||'<p class="muted">अभी कोई recorded lesson नहीं जोड़ा गया।</p>';
+ $('mediaLessonList').innerHTML=cards;
+ $('studentMediaList').innerHTML=mediaLessons.map(x=>`<div class="qbox"><b>${esc(x.title)}</b><small>${esc(x.course||'')}</small><button class="btn light small" onclick="playMediaLesson(${x.id})">Open Lesson</button></div>`).join('')||'<p class="muted">अभी कोई lesson उपलब्ध नहीं है।</p>';
+ $('liveClassList').innerHTML=liveClasses.map(c=>`<div class="qbox"><b>${esc(c.title)}</b><small>${esc(c.teacher||'Teacher not specified')} · ${esc(c.course||'')}<br>${esc(new Date(c.date).toLocaleString())} · ${c.mode==='external'?'External meeting':'Integrated demo room'}</small><button class="btn small" onclick="joinLiveClass(${c.id})">Join Class</button></div>`).join('')||'<p class="muted">अभी कोई live class schedule नहीं है।</p>';
+}
+
+
+const railwayCatalog=[
+ {exam:'GDCE',type:'PYQ',title:'GDCE Previous Year Paper Collection',detail:'वर्ष, पद और विभाग के अनुसार सत्यापित प्रश्नपत्र यहाँ जोड़े जाएँगे।',tag:'PYQ'},
+ {exam:'GDCE',type:'Practice',title:'GDCE Topic-wise Practice Sets',detail:'सामान्य ज्ञान, गणित, रीजनिंग तथा पद-विशेष विषयों के अभ्यास सेट।',tag:'PRACTICE'},
+ {exam:'GDCE',type:'Mock',title:'GDCE Full-Length Mock Test Series',detail:'समय सीमा, प्रश्न-पैलेट, नकारात्मक अंकन और विस्तृत परिणाम सहित।',tag:'MOCK TEST'},
+ {exam:'GDCE',type:'PDF',title:'GDCE Syllabus & Study Notes',detail:'अधिसूचना और पद के अनुसार व्यवस्थित PDF अध्ययन सामग्री।',tag:'PDF'},
+ {exam:'LDCE',type:'PYQ',title:'LDCE Previous Year Paper Collection',detail:'विभाग, पद, जोन/डिवीजन और वर्ष के अनुसार पुराने प्रश्नपत्र।',tag:'PYQ'},
+ {exam:'LDCE',type:'Practice',title:'LDCE Department-wise Practice Sets',detail:'विभागीय नियम, तकनीकी विषय और पद-विशेष प्रश्नों का अभ्यास।',tag:'PRACTICE'},
+ {exam:'LDCE',type:'Mock',title:'LDCE Full-Length Mock Test Series',detail:'वास्तविक परीक्षा शैली में समयबद्ध Mock Tests और प्रदर्शन विश्लेषण।',tag:'MOCK TEST'},
+ {exam:'LDCE',type:'PDF',title:'LDCE Rules, Syllabus & PDF Notes',detail:'लागू नियमों, पाठ्यक्रम और विभागीय सामग्री के PDF संग्रह।',tag:'PDF'}
+];
+function selectRailwayExam(exam){
+ $('railwayExamSelect').value=exam;
+ $('railwayTypeSelect').value='all';
+ renderRailwayZone();
+ go('railwayzone');
+}
+function setRailwayType(type){
+ $('railwayTypeSelect').value=type;
+ document.querySelectorAll('#railwayTabs .tab').forEach(b=>b.classList.remove('active'));
+ const idx={all:0,PYQ:1,Practice:2,Mock:3,PDF:4}[type];
+ const btn=document.querySelectorAll('#railwayTabs .tab')[idx];if(btn)btn.classList.add('active');
+ renderRailwayZone();
+}
+function openRailwayMaterial(title,type,exam){
+ openModal(title,`<p><b>${exam} · ${type}</b></p><p>यह सामग्री सूची का नमूना है। वास्तविक PDF / प्रश्नपत्र / Mock Test को Admin द्वारा अपलोड और सत्यापित करने के बाद विद्यार्थी इसे खोल या हल कर सकेंगे।</p><p class="muted">अभी इस कार्ड में वास्तविक प्रश्नपत्र संलग्न नहीं है।</p>`);
+}
+
+let adminRailwayMaterials=[];
+let adminRailwayObjectUrls=[];
+function toggleRailUploadFields(){
+ const t=$('admRailType').value;
+ const needsQuestions=t==='Practice'||t==='Mock';
+ $('admRailQuestionsWrap').classList.toggle('hide',!needsQuestions);
+ $('admRailFileWrap').classList.toggle('hide',needsQuestions);
+}
+function addRailwayAdminMaterial(){
+ const exam=$('admRailExam').value,type=$('admRailType').value,title=$('admRailTitle').value.trim();
+ const price=Number($('admRailPrice').value);
+ if(!title)return toast('शीर्षक भरें');
+ if(!Number.isFinite(price)||price<0)return toast('सही मूल्य दर्ज करें');
+ const item={id:Date.now()+Math.random(),exam,type,title,year:$('admRailYear').value.trim(),post:$('admRailPost').value.trim(),division:$('admRailDivision').value.trim(),desc:$('admRailDesc').value.trim(),price,fileName:'',url:'',questions:[],status:'Published'};
+ if(type==='Practice'||type==='Mock'){
+  let parsed;
+  try{parsed=JSON.parse($('admRailQuestions').value)}catch(e){return toast('प्रश्न JSON सही नहीं है')}
+  if(!Array.isArray(parsed)||!parsed.length)return toast('कम से कम एक प्रश्न जोड़ें');
+  const valid=parsed.every(q=>q&&typeof q.q==='string'&&Array.isArray(q.o)&&q.o.length>=2&&Number.isInteger(q.a)&&q.a>=0&&q.a<q.o.length);
+  if(!valid)return toast('हर प्रश्न में q, o विकल्प और सही a क्रमांक होना चाहिए');
+  item.questions=parsed;
+ }else{
+  const f=$('admRailFile').files[0];
+  if(!f||(!f.type.includes('pdf')&&!f.name.toLowerCase().endsWith('.pdf')))return toast('PDF file चुनें');
+  item.fileName=f.name;item.url=URL.createObjectURL(f);adminRailwayObjectUrls.push(item.url);
+ }
+ adminRailwayMaterials.unshift(item);
+ if(item.fileName)sppSaveUploadedPdf(item,$('admRailFile').files[0],true);else sppSaveMeta();
+ $('admRailTitle').value='';$('admRailYear').value='';$('admRailPost').value='';$('admRailDivision').value='';$('admRailDesc').value='';$('admRailPrice').value='0';$('admRailFile').value='';$('admRailQuestions').value='';
+ renderRailwayZone();renderAdminRailwayMaterials();
+ toast('Railway सामग्री इस browser demo में प्रकाशित कर दी गई');
+}
+function renderAdminRailwayMaterials(){
+ const host=$('adminRailMaterialList');if(!host)return;
+ host.innerHTML=adminRailwayMaterials.map(x=>`<div class="qbox"><b>${esc(x.title)}</b><small>${x.exam} · ${x.type} · ${esc(x.year||'Year not set')} · ${esc(x.post||'Post not set')} · ₹${x.price}<br>${esc(x.fileName||(`${x.questions.length} questions`))}</small><button class="btn light small" onclick="removeRailwayMaterial(${x.id})">Remove</button></div>`).join('')||'<p class="muted">अभी कोई सामग्री अपलोड नहीं की गई।</p>';
+}
+function removeRailwayMaterial(id){
+ const x=adminRailwayMaterials.find(m=>m.id===id);if(!x)return;
+ if(x.url){URL.revokeObjectURL(x.url);adminRailwayObjectUrls=adminRailwayObjectUrls.filter(u=>u!==x.url)}
+ adminRailwayMaterials=adminRailwayMaterials.filter(m=>m.id!==id);sppDeletePdf(id);sppSaveMeta();
+ renderRailwayZone();renderAdminRailwayMaterials();toast('सामग्री सूची से हटा दी गई');
+}
+function openRailwayAdminItem(id){
+ const x=adminRailwayMaterials.find(m=>m.id===id);if(!x)return;
+ if(x.type==='Practice'||x.type==='Mock'){beginRun(x.title,x.questions,x.type==='Mock'?600:0,x.type==='Mock'?'mock':'practice');return;}
+ if(x.url){openModal(x.title,`<p>${esc(x.desc)}</p><p><b>${esc(x.fileName)}</b></p><a class="btn" href="${x.url}" target="_blank" rel="noopener">Open / Download PDF</a>`);return}
+ const qs=x.questions.map((q,i)=>`<div class="qbox"><b>Q${i+1}. ${esc(q.q)}</b>${q.o.map((o,j)=>`<p>${String.fromCharCode(65+j)}. ${esc(o)} ${j===q.a?'<b>✓ सही उत्तर</b>':''}</p>`).join('')}<small>${esc(q.e||'')}</small></div>`).join('');
+ openModal(x.title,`<p>${x.exam} · ${x.type} · ${esc(x.post||'')}</p>${qs}`);
+}
+
+
+let adminGeneralMaterials=[];
+let adminGeneralObjectUrls=[];
+function toggleGeneralUploadFields(){
+ const t=$('admGenType').value,needs=t==='Practice'||t==='Mock';
+ $('admGenQuestionsWrap').classList.toggle('hide',!needs);
+ $('admGenFileWrap').classList.toggle('hide',needs);
+}
+function addGeneralAdminMaterial(){
+ const exam=$('admGenExam').value,type=$('admGenType').value,title=$('admGenTitle').value.trim(),price=Number($('admGenPrice').value);
+ if(!title)return toast('सामग्री का शीर्षक भरें');
+ if(!Number.isFinite(price)||price<0)return toast('सही मूल्य दर्ज करें');
+ const item={id:Date.now()+Math.random(),exam,type,title,year:$('admGenYear').value.trim(),subject:$('admGenSubject').value.trim(),language:$('admGenLanguage').value,desc:$('admGenDesc').value.trim(),price,fileName:'',url:'',questions:[],status:'Published'};
+ if(type==='Practice'||type==='Mock'){
+  let arr;try{arr=JSON.parse($('admGenQuestions').value)}catch(e){return toast('प्रश्नों का JSON सही नहीं है')}
+  if(!Array.isArray(arr)||!arr.length)return toast('कम से कम एक प्रश्न जोड़ें');
+  if(!arr.every(q=>q&&typeof q.q==='string'&&Array.isArray(q.o)&&q.o.length>=2&&Number.isInteger(q.a)&&q.a>=0&&q.a<q.o.length))return toast('हर प्रश्न में प्रश्न, विकल्प और सही उत्तर क्रमांक आवश्यक है');
+  item.questions=arr;
+ }else{
+  const f=$('admGenFile').files[0];
+  if(!f||(!f.type.includes('pdf')&&!f.name.toLowerCase().endsWith('.pdf')))return toast('PDF file चुनें');
+  item.fileName=f.name;item.url=URL.createObjectURL(f);adminGeneralObjectUrls.push(item.url);
+ }
+ adminGeneralMaterials.unshift(item);
+ if(item.fileName)sppSaveUploadedPdf(item,$('admGenFile').files[0],false);else sppSaveMeta();
+ ['admGenTitle','admGenYear','admGenSubject','admGenDesc','admGenQuestions'].forEach(id=>$(id).value='');
+ $('admGenPrice').value='0';$('admGenFile').value='';
+ renderGeneralPublicMaterials();renderAdminGeneralMaterials();
+ toast('General Exam सामग्री browser demo में प्रकाशित हो गई');
+}
+function renderAdminGeneralMaterials(){
+ const host=$('adminGeneralMaterialList');if(!host)return;
+ host.innerHTML=adminGeneralMaterials.map(x=>`<div class="qbox"><b>${esc(x.title)}</b><small>${esc(x.exam)} · ${x.type} · ${esc(x.year||'Year not set')} · ${esc(x.subject||'')} · ${x.language} · ₹${x.price}<br>${esc(x.fileName||`${x.questions.length} questions`)}</small><button class="btn light small" onclick="removeGeneralMaterial(${x.id})">Remove</button></div>`).join('')||'<p class="muted">अभी कोई General Exam सामग्री नहीं जोड़ी गई।</p>';
+}
+function removeGeneralMaterial(id){
+ const x=adminGeneralMaterials.find(m=>m.id===id);if(!x)return;
+ if(x.url){URL.revokeObjectURL(x.url);adminGeneralObjectUrls=adminGeneralObjectUrls.filter(u=>u!==x.url)}
+ adminGeneralMaterials=adminGeneralMaterials.filter(m=>m.id!==id);sppDeletePdf(id);sppSaveMeta();
+ renderGeneralPublicMaterials();renderAdminGeneralMaterials();toast('सामग्री हटा दी गई');
+}
+function openGeneralMaterial(id){
+ const x=adminGeneralMaterials.find(m=>m.id===id);if(!x)return;
+ if(x.type==='Practice'||x.type==='Mock'){beginRun(x.title,x.questions, x.type==='Mock'?600:0, x.type==='Mock'?'mock':'practice');return;}
+ if(x.url){openModal(x.title,`<p>${esc(x.exam)} · ${x.type} · ${esc(x.year)}</p><p>${esc(x.desc)}</p><p><b>${esc(x.fileName)}</b></p><a class="btn" href="${x.url}" target="_blank" rel="noopener">Open / Download PDF</a>`);return}
+ const qs=x.questions.map((q,i)=>`<div class="qbox"><b>Q${i+1}. ${esc(q.q)}</b>${q.o.map((v,j)=>`<p>${String.fromCharCode(65+j)}. ${esc(v)} ${j===q.a?'<b>✓ सही उत्तर</b>':''}</p>`).join('')}<small>${esc(q.e||'')}</small></div>`).join('');
+ openModal(x.title,`<p>${esc(x.exam)} · ${x.type} · ${esc(x.subject)}</p>${qs}`);
+}
+
+// V17: persistent single-device prototype storage (IndexedDB + localStorage).
+const SPP_DB_NAME='sarthak_study_point_v17';
+const SPP_DB_VERSION=1;
+let sppDb=null;
+function sppOpenDb(){
+ return new Promise((resolve,reject)=>{
+  if(!('indexedDB' in window)){reject(new Error('IndexedDB unavailable'));return}
+  const req=indexedDB.open(SPP_DB_NAME,SPP_DB_VERSION);
+  req.onupgradeneeded=()=>{const db=req.result;if(!db.objectStoreNames.contains('pdfs'))db.createObjectStore('pdfs',{keyPath:'id'})};
+  req.onsuccess=()=>{sppDb=req.result;resolve(sppDb)};
+  req.onerror=()=>reject(req.error||new Error('Database open failed'));
+ });
+}
+function sppStorePdf(id,file){
+ return sppOpenDb().then(db=>new Promise((resolve,reject)=>{
+  const tx=db.transaction('pdfs','readwrite');
+  tx.objectStore('pdfs').put({id,blob:file,name:file.name,type:file.type||'application/pdf'});
+  tx.oncomplete=()=>resolve(true);tx.onerror=()=>reject(tx.error||new Error('PDF save failed'));
+ }));
+}
+function sppGetPdf(id){
+ return sppOpenDb().then(db=>new Promise((resolve,reject)=>{
+  const tx=db.transaction('pdfs','readonly'),req=tx.objectStore('pdfs').get(id);
+  req.onsuccess=()=>resolve(req.result||null);req.onerror=()=>reject(req.error);
+ }));
+}
+function sppDeletePdf(id){
+ return sppOpenDb().then(db=>new Promise(resolve=>{
+  const tx=db.transaction('pdfs','readwrite');tx.objectStore('pdfs').delete(id);tx.oncomplete=()=>resolve(true);tx.onerror=()=>resolve(false);
+ }));
+}
+function sppSaveMeta(){
+ try{
+  localStorage.setItem('spp_v17_general',JSON.stringify(adminGeneralMaterials.map(({url,...x})=>x)));
+  localStorage.setItem('spp_v17_railway',JSON.stringify(adminRailwayMaterials.map(({url,...x})=>x)));
+  localStorage.setItem('spp_v17_results',JSON.stringify(sppResults.slice(0,100)));
+  return true;
+ }catch(e){toast('Browser storage भर गया है। कुछ पुरानी सामग्री हटाएँ।');return false}
+}
+let sppResults=[];
+function sppRestore(){
+ try{
+  adminGeneralMaterials=JSON.parse(localStorage.getItem('spp_v17_general')||'[]');
+  adminRailwayMaterials=JSON.parse(localStorage.getItem('spp_v17_railway')||'[]');
+  sppResults=JSON.parse(localStorage.getItem('spp_v17_results')||'[]');
+ }catch(e){adminGeneralMaterials=[];adminRailwayMaterials=[];sppResults=[]}
+ const all=[...adminGeneralMaterials,...adminRailwayMaterials];
+ return Promise.all(all.map(async item=>{
+  if(item.fileName){
+   try{const saved=await sppGetPdf(item.id);if(saved){item.url=URL.createObjectURL(saved.blob);(item.exam==='GDCE'||item.exam==='LDCE'?adminRailwayObjectUrls:adminGeneralObjectUrls).push(item.url)}}catch(e){}
+  }
+ })).then(()=>{renderRailwayZone();renderAdminRailwayMaterials();renderGeneralPublicMaterials();renderAdminGeneralMaterials();renderAdminRailwayMaterials();});
+}
+function sppSaveUploadedPdf(item,file,railway){
+ if(!file)return Promise.resolve();
+ return sppStorePdf(item.id,file).then(()=>{sppSaveMeta();}).catch(()=>toast('PDF स्थायी रूप से save नहीं हो सकी; storage permission/space जाँचें'));
+}
+
+function sppExportBackup(){
+ const data={version:17,createdAt:new Date().toISOString(),general:adminGeneralMaterials.map(({url,...x})=>x),railway:adminRailwayMaterials.map(({url,...x})=>x),results:sppResults};
+ const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+ const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='sarthak-study-point-backup.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+
+function sppShowResults(){
+ const host=$('sppResultsList');if(!host)return;
+ host.innerHTML=sppResults.map(r=>`<div class="qbox"><b>${esc(r.title)}</b><small>${esc(r.date)} · ${r.correct} सही · ${r.wrong} गलत · ${r.unanswered} छोड़े · अंक ${r.score}</small></div>`).join('')||'<p class="muted">अभी कोई परीक्षा परिणाम सुरक्षित नहीं है।</p>';
+}
+
+function renderGeneralPublicMaterials(){
+ const host=$('generalPublicMaterialList');if(!host)return;
+ const exam=$('publicGenExam').value,type=$('publicGenType').value;
+ const items=adminGeneralMaterials.filter(x=>(exam==='all'||x.exam===exam)&&(type==='all'||x.type===type));
+ host.innerHTML=items.map(x=>`<div class="railway-item"><span class="pill blue">${x.type}</span><h3>${esc(x.title)}</h3><p>${esc(x.exam)} · ${esc(x.year||'')} · ${esc(x.subject||'')} · ${esc(x.language)}</p><p>${esc(x.desc||x.fileName||'')}</p><p><b>${x.price===0?'FREE':'₹'+x.price}</b></p><button class="btn small" onclick="openGeneralMaterial(${x.id})">Open / View</button></div>`).join('')||'<p class="muted">इस चयन के लिए अभी सामग्री उपलब्ध नहीं है। Admin Panel से सामग्री जोड़ें।</p>';
+}
+
+function renderRailwayZone(){
+ const exam=$('railwayExamSelect').value,type=$('railwayTypeSelect').value;
+ const items=railwayCatalog.filter(x=>x.exam===exam&&(type==='all'||x.type===type)).map(x=>({...x,placeholder:true}));
+ const uploaded=adminRailwayMaterials.filter(x=>x.exam===exam&&(type==='all'||x.type===type)).map(x=>({...x,tag:x.type==='Mock'?'MOCK TEST':x.type.toUpperCase(),placeholder:false}));
+ const allItems=[...uploaded,...items];
+ $('railwayContent').innerHTML=allItems.map(x=>`<div class="railway-item"><span class="pill blue">${x.tag}</span><h3>${x.title}</h3><p>${x.detail}</p><button class="btn small" onclick="${x.placeholder?`openRailwayMaterial('${x.title.replace(/'/g,"\\'")}','${x.type}','${x.exam}')`:`openRailwayAdminItem(${x.id})`}">View / Open</button></div>`).join('');
+}
+
+function render(){let published=courses.filter(c=>c.status==='Approved');$('homeCourses').innerHTML=published.slice(0,3).map(card).join('');$('marketCourses').innerHTML=published.map(card).join('')||'<div class="panel empty">No approved courses yet.</div>';$('ownProductGrid').innerHTML=ownProducts.map(ownCard).join('');$('ownPaperGrid').innerHTML=ownProducts.filter(p=>p.type!=='Mock Test Pack').map(ownCard).join('')||'<div class="panel empty">No PDF or papers added.</div>';$('ownMockGrid').innerHTML=ownProducts.filter(p=>p.type==='Mock Test Pack').map(ownCard).join('')||'<div class="panel empty">No mock test packs added.</div>';$('ownAdminList').innerHTML=ownProducts.map(p=>`<div class="qbox"><b>${esc(p.name)}</b><small>${esc(p.type)} · ₹${p.price} · ${esc(p.fileName||'No PDF selected')}</small></div>`).join('');$('hCourses').textContent=published.length;$('hTeachers').textContent=teachers.length;$('hTests').textContent=tests.length;
+let mine=courses.filter(c=>c.teacher===1);$('thCourses').textContent=mine.length;let myOrders=orders.filter(o=>mine.some(c=>c.id===o.course));let gross=myOrders.reduce((a,o)=>a+o.amount,0);$('thSales').textContent=myOrders.length;$('thGross').textContent='₹'+gross;$('thNet').textContent='₹'+Math.round(gross*(1-commission/100));$('teacherCourseList').innerHTML=mine.map(c=>`<div class="qbox"><b>${esc(c.name)}</b><small>${c.status} · ₹${c.price} · ${c.billing==='monthly'?'Monthly':'One-time'}</small></div>`).join('')||'<p class="muted">No courses yet.</p>';$('teacherEarnings').innerHTML=mine.map(c=>{let g=orders.filter(o=>o.course===c.id).reduce((a,o)=>a+o.amount,0);return `<tr><td>${esc(c.name)}</td><td>₹${g}</td><td>₹${Math.round(g*commission/100)}</td><td>₹${Math.round(g*(1-commission/100))}</td></tr>`}).join('')||'<tr><td colspan="4">No sales yet.</td></tr>';
+$('stEnrolled').textContent=enrolled.length;$('stTests').textContent=tests.length;$('stSpent').textContent='₹'+orders.reduce((a,o)=>a+o.amount,0);$('studentLearning').innerHTML=enrolled.map(id=>courses.find(c=>c.id===id)).filter(Boolean).map(c=>`<div class="qbox"><b>${esc(c.name)}</b><small>Teacher: ${esc(teacherName(c.teacher))} · Demo access</small><button class="btn light small" onclick="toast('Video lesson player will be connected in production')">Open Learning</button></div>`).join('')||'<p class="muted">You have not enrolled in any course.</p>';$('studentTests').innerHTML=tests.map(t=>`<div class="qbox"><b>${esc(t.name)}</b><small>${t.count} questions · ${t.mode}</small><button class="btn light small" onclick="toast('CBT test engine is part of the next integration')">Open Test</button></div>`).join('');$('studentOrders').innerHTML=orders.map(o=>`<div class="qbox"><b>${esc(courses.find(c=>c.id===o.course)?.name||'Course')}</b><small>₹${o.amount} · ${o.status}</small></div>`).join('')||'<p class="muted">No orders yet.</p>';
+$('aCourses').textContent=courses.length;$('aPending').textContent=courses.filter(c=>c.status==='Pending').length;$('aTeachers').textContent=applications.filter(a=>a.status==='Pending').length;$('aCommission').textContent='₹'+Math.round(orders.reduce((a,o)=>a+o.amount,0)*commission/100);$('teacherApplications').innerHTML=applications.map(a=>`<div class="qbox"><b>${esc(a.name)} — ${esc(a.subject)}</b><small>${esc(a.contact)} · ${a.status}</small>${a.status==='Pending'?`<button class="btn small green" onclick="approveTeacher(${a.id})">Approve Teacher</button>`:''}</div>`).join('')||'<p class="muted">No pending applications.</p>';$('approvalList').innerHTML=courses.filter(c=>c.status==='Pending').map(c=>`<div class="qbox"><b>${esc(c.name)}</b><small>By ${esc(teacherName(c.teacher))} · ₹${c.price}</small><div class="row" style="margin-top:8px"><button class="btn small green" onclick="approveCourse(${c.id})">Approve & Publish</button><button class="btn small red" onclick="rejectCourse(${c.id})">Reject</button></div></div>`).join('')||'<p class="muted">No pending courses.</p>';$('salesRows').innerHTML=orders.map(o=>{let c=courses.find(x=>x.id===o.course),fee=Math.round(o.amount*commission/100),share=o.amount-fee;return `<tr><td>${esc(c?.name||'Course')}</td><td>₹${o.amount}</td><td>₹${fee}</td><td>₹${share}</td><td><span class="pill gold">Demo only</span></td></tr>`}).join('')||'<tr><td colspan="5">No demo sales.</td></tr>'}
+
+// Keep media panels in sync with the demo content.
+renderMedia();
+
+function openExamZone(which){
+ const page=document.getElementById('examzone');
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ page.classList.add('active');
+ document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.page==='examzone'));
+ document.querySelectorAll('#examZoneTabs .tab').forEach(b=>b.classList.toggle('active',b.dataset.zone===which));
+ document.querySelectorAll('.zoneContent').forEach(x=>x.classList.add('hide'));
+ const ids={previous:'zonePrevious',practice:'zonePractice',mock:'zoneMock'};
+ if(ids[which])document.getElementById(ids[which]).classList.remove('hide');
+ window.scrollTo(0,0);
+}
+document.querySelectorAll('#examZoneTabs .tab').forEach(b=>b.onclick=()=>openExamZone(b.dataset.zone));
+
+window.addEventListener('keydown',function(e){
+ if(e.key==='Escape' && $('testRunner').classList.contains('show')){
+   leaveTest();
+ }
+});
+
+
+const demoBank={
+ "General Awareness":[
+ {q:"भारतीय संविधान कब लागू हुआ?",o:["15 अगस्त 1947","26 जनवरी 1950","26 नवम्बर 1949","2 अक्टूबर 1950"],a:1,e:"भारतीय संविधान 26 जनवरी 1950 को लागू हुआ।"},
+ {q:"भारत की राजधानी कौन-सी है?",o:["मुंबई","कोलकाता","नई दिल्ली","चेन्नई"],a:2,e:"भारत की राजधानी नई दिल्ली है।"},
+ {q:"सौरमंडल का सबसे बड़ा ग्रह कौन-सा है?",o:["पृथ्वी","मंगल","शनि","बृहस्पति"],a:3,e:"बृहस्पति सौरमंडल का सबसे बड़ा ग्रह है।"}
+ ],
+ "Mathematics":[
+ {q:"240 का 25% कितना होगा?",o:["40","50","60","80"],a:2,e:"240 × 25/100 = 60।"},
+ {q:"यदि 12 × 8 = 96, तो 96 ÷ 12 कितना होगा?",o:["6","7","8","9"],a:2,e:"96 को 12 से भाग देने पर 8 मिलता है।"},
+ {q:"एक वस्तु ₹500 में खरीदी और ₹600 में बेची। लाभ प्रतिशत कितना है?",o:["10%","15%","20%","25%"],a:2,e:"लाभ 100 रुपये है; 100/500 × 100 = 20%।"}
+ ],
+ "Reasoning":[
+ {q:"श्रृंखला पूरी करें: 2, 4, 8, 16, __",o:["18","24","30","32"],a:3,e:"हर अगली संख्या पिछली संख्या की दोगुनी है।"},
+ {q:"यदि CAT को DBU लिखा जाए, तो DOG को कैसे लिखेंगे?",o:["EPH","EOG","FPH","DPH"],a:0,e:"हर अक्षर के बाद वाला अक्षर लिया गया है: D→E, O→P, G→H।"},
+ {q:"इनमें से अलग कौन है?",o:["सेब","आम","गाजर","केला"],a:2,e:"गाजर सब्जी है, जबकि अन्य फल हैं।"}
+ ],
+ "English":[
+ {q:"Choose the correct plural of 'Child'.",o:["Childs","Children","Childes","Childrens"],a:1,e:"Child का irregular plural Children है।"},
+ {q:"Choose the correct sentence.",o:["He go to school.","He going school.","He goes to school.","He gone to school."],a:2,e:"He के साथ Simple Present में goes आता है।"},
+ {q:"'Honest' का सही अर्थ क्या है?",o:["ईमानदार","आलसी","बहादुर","चतुर"],a:0,e:"Honest का अर्थ ईमानदार होता है।"}
+ ]
+};
+let activeQuestions=[],activeAnswers={},activeReview={},activeIndex=0,activeTime=600,activeTimer=null,activeMode='practice',activeTitle='';
+function setPractice(subject){$('practiceSubject').value=subject;startPractice()}
+function startPractice(){let subject=$('practiceSubject').value;activeQuestions=demoBank[subject]||demoBank['General Awareness'];beginRun(subject+' – Paper Practice',activeQuestions,0,'practice')}
+function filterPapers(){let exam=$('pyExam').value,year=$('pyYear').value;$('pyPaperList').innerHTML=`<div class="zone-item"><h4>📄 ${esc(exam)} – ${esc(year)} (Demo Sample)</h4><p>Sample questions only; this is not an official previous-year paper.</p><div class="row"><button class="btn small" onclick="startPreviousPaper()">Solve Online</button><button class="btn light small" onclick="toast('Verified PDF upload and PDF viewer production backend में जोड़ा जाएगा')">View / Download PDF</button></div></div>`}
+function startPreviousPaper(){let exam=$('pyExam').value,year=$('pyYear').value;let qs=[...demoBank['General Awareness'],...demoBank['Reasoning']];beginRun(exam+' '+year+' – Sample Paper',qs,12,'pyq')}
+function startMock(kind){let exam=$('mockExam')?$('mockExam').value:'RRB Group D';let qs=[...demoBank['General Awareness'],...demoBank['Mathematics'],...demoBank['Reasoning'],...demoBank['English']];beginRun(exam+' – Free Mock Test Set 01',qs,600,'mock')}
+function buyMockSeries(){openModal('Paid Mock Test Series – Demo',`<p>Series price: <b>₹99</b></p><p class="muted">यह केवल demo checkout है। कोई वास्तविक भुगतान नहीं होगा और कोई वास्तविक paid access नहीं मिलेगा।</p><button class="btn" onclick="closeModal();toast('Live payment gateway जुड़ने के बाद paid series unlock होगी')">Continue (Demo)</button>`)}
+function beginRun(title,questions,seconds,mode){activeTitle=title;activeQuestions=questions;activeTime=seconds;activeMode=mode;activeAnswers={};activeReview={};activeIndex=0;$('runTitle').textContent=title;$('runMarks').textContent=mode==='practice'?'Practice · No time limit':'+1 / −0.25';$('runTimer').textContent=mode==='practice'?'Practice':formatTime(activeTime);$('testRunner').classList.add('show');try{history.pushState({sarthakRunner:true},'', location.href);}catch(e){}renderRun();if(activeTimer)clearInterval(activeTimer);if(mode!=='practice'){activeTimer=setInterval(()=>{activeTime--; $('runTimer').textContent=formatTime(activeTime);if(activeTime<=0){clearInterval(activeTimer);submitRun(true)}},1000)}}
+function formatTime(s){return Math.floor(s/60).toString().padStart(2,'0')+':'+(s%60).toString().padStart(2,'0')}
+function renderRun(){let q=activeQuestions[activeIndex];$('runMeta').textContent=`Question ${activeIndex+1} of ${activeQuestions.length}`;$('runSection').textContent=activeMode==='practice'?'Practice Mode':'Section 1';$('runQuestion').textContent=q.q;$('runOptions').innerHTML=q.o.map((v,i)=>`<label class="runner-option ${activeAnswers[activeIndex]===i?'selected':''}"><input type="radio" name="runOption" ${activeAnswers[activeIndex]===i?'checked':''} onchange="selectAnswer(${i})"><span><b>${String.fromCharCode(65+i)}.</b> ${esc(v)}</span></label>`).join('');$('runPalette').innerHTML=activeQuestions.map((_,i)=>`<button class="pal ${activeAnswers[i]!==undefined?'answered':''} ${activeReview[i]?'review':''} ${i===activeIndex?'current':''}" onclick="jumpQuestion(${i})">${i+1}</button>`).join('')}
+function selectAnswer(i){activeAnswers[activeIndex]=i;renderRun()}
+function jumpQuestion(i){activeIndex=i;renderRun()}
+function nextQuestion(){if(activeIndex<activeQuestions.length-1)activeIndex++;renderRun()}
+function previousQuestion(){if(activeIndex>0)activeIndex--;renderRun()}
+function markReview(){activeReview[activeIndex]=!activeReview[activeIndex];if(activeIndex<activeQuestions.length-1)activeIndex++;renderRun()}
+function leaveTest(){if(activeTimer)clearInterval(activeTimer);$('testRunner').classList.remove('show');toast('आप Exam Zone में वापस आ गए हैं।');}
+function confirmSubmit(){let done=Object.keys(activeAnswers).length;openModal('Submit examination?',`<p>Answered: <b>${done}/${activeQuestions.length}</b></p><p class="muted">Submit करने के बाद उत्तर बदले नहीं जा सकेंगे।</p><div class="row"><button class="btn light" onclick="closeModal()">Continue Test</button><button class="btn green" onclick="closeModal();submitRun(false)">Final Submit</button></div>`)}
+function submitRun(auto){if(activeTimer)clearInterval(activeTimer);let correct=0,wrong=0,unanswered=0;activeQuestions.forEach((q,i)=>{if(activeAnswers[i]===undefined)unanswered++;else if(activeAnswers[i]===q.a)correct++;else wrong++});let score=activeMode==='practice'?correct:correct-wrong*.25;sppResults.unshift({title:activeTitle,date:new Date().toLocaleString(),correct,wrong,unanswered,score:Number(score.toFixed(2))});sppSaveMeta();sppShowResults();let detail=activeQuestions.map((q,i)=>`<div class="review-item"><b>Q${i+1}. ${esc(q.q)}</b><br>Your answer: ${activeAnswers[i]===undefined?'Not answered':esc(q.o[activeAnswers[i]])}<br>Correct answer: <b>${esc(q.o[q.a])}</b><br><span class="muted">${esc(q.e)}</span></div>`).join('');$('testRunner').classList.remove('show');openModal('Test Result',`<div style="text-align:center"><div class="result-score">${score.toFixed(2)}</div><b>${auto?'Time over — Auto submitted':'Test submitted'}</b><p class="muted">Correct: ${correct} · Wrong: ${wrong} · Unanswered: ${unanswered}</p></div><hr><h3>Answer & Explanation Review</h3><div style="max-height:48vh;overflow:auto">${detail}</div><button class="btn" style="margin-top:14px" onclick="closeModal()">Close Result</button>`)}
+filterPapers();
+render();
+renderRailwayZone();renderAdminRailwayMaterials();toggleRailUploadFields();renderGeneralPublicMaterials();renderAdminGeneralMaterials();toggleGeneralUploadFields();sppShowResults();sppRestore();
+</script></body></html>
